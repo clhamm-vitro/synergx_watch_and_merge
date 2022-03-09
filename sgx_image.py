@@ -35,7 +35,7 @@ class SGX_image:
             self.combined_image_dest_folder = combined_image_dest_folder
         else:
             self.combined_image_dest_folder = dest_image_folder
-        self.persistent_data_path = os.path.dirname(os.path.abspath(__file__)) + '/' + 'persisent_data.pkl'
+        self.persistent_data_path = os.path.dirname(os.path.abspath(__file__)) + '/' + 'persistent_data.pkl'
         self.persistent_data = self.initialize_persistent_data()
         self.max_sequential_number = 9999
         if self.bright:
@@ -159,7 +159,6 @@ class SGX_image:
             self.persistent_data['sequential_number'] += 1
         else:
             self.persistent_data['sequential_number'] = 0
-
         save_persistant_data(self.persistent_data, self.persistent_data_path)
 
 
